@@ -7,23 +7,25 @@ public class Lightitup : MonoBehaviour
     // Start is called before the first frame update
     public ParticleSystem particle;
     public GameObject gameOb;
-    
-    void Start()
-    {
-        
-    }
+    public bool lit;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        particle.Stop();
     }
-
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == gameOb)
         {
-            particle.Play();
+            lit = true;
+            if (lit)
+            {
+                particle.Play();
+            }
+            else
+            {
+                particle.Stop();
+            }
         }
     }
 }
