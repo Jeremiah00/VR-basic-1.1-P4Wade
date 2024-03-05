@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lightitup : MonoBehaviour
+public class Lighter : MonoBehaviour
 {
     // Start is called before the first frame update
-    public ParticleSystem particle;
-    public GameObject gameOb;
-    
     void Start()
     {
         
@@ -18,13 +15,4 @@ public class Lightitup : MonoBehaviour
     {
         
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject == gameOb)
-        {
-            particle.Play();
-        }
-    }
 }
-
